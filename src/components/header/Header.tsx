@@ -1,7 +1,6 @@
-import xIcon from '../../../public/images/twitter.svg';
-import phoneIcon from '../../../public/images/phone.png';
-import locationIcon from '../../../public/images/location.png';
-
+import xIcon from '/images/twitter.svg';
+import phoneIcon from '/images/phone.svg';
+import locationIcon from '/images/location.svg';
 import styled from '@emotion/styled';
 
 const Header = () => {
