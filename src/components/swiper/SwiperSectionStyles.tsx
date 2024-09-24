@@ -46,6 +46,7 @@ export const TextContent = styled.div`
         border-radius: 5px;
         color: rgb(255, 255, 255);
         padding: 16px 36px;
+        cursor: pointer;
     }
 `;
 
