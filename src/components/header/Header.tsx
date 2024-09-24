@@ -42,19 +42,19 @@ const Header = () => {
 export default Header;
 
 const Container = styled.div`
-    width: 100%;
-    background-color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    background-color: #333;
 `;
 
 const HeaderTopContainer = styled.div`
-    width: 100%;
-    max-width: 1140px;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1140px;
 `;
 
 const HeaderTopLeft = styled.div`
@@ -80,13 +80,13 @@ const IconStyled = styled.img`
 
 const HeaderTopRight = styled.div`
     display: flex;
-    gap: 24px;
     align-items: center;
+    gap: 24px;
 `;
 const LocationNumberWrapper = styled.div`
     display: flex;
-    gap: 6px;
     align-items: center;
+    gap: 6px;
     color: rgb(222, 222, 222);
 `;
 
