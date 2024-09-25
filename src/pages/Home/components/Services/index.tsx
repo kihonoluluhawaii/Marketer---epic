@@ -4,6 +4,7 @@ import ImageResource, {
     ImageName,
 } from '../../../../components/ImageResouce/ImageResource.tsx';
 import SectionHeader from '../SectionHeader.tsx';
+import ServiceIntroduction from './ServiceIntroduction.tsx';
 
 // const partnerList: Array<{ name: ImageName; alt: string }> = [
 //     { name: 'partner1', alt: 'partner1 image' },
@@ -63,6 +64,7 @@ const ServiceSection = () => {
                     </Service>
                 ))}
             </ServiceLists>
+            <ServiceIntroduction />
         </Container>
     );
 };
