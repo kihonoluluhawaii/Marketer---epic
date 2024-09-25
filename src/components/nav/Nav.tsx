@@ -1,44 +1,69 @@
 import pencilIcon from '../../../public/images/pencil.png';
-import { useState } from 'react';
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
-    const [activeItem, setActiveItem] = useState('Home');
-
     return (
-        <NavWrapper>
+        <Container>
             <MainLogo src={pencilIcon} alt={'pencil icon'} />
             <NavMenu>
-                <MenuItem isActive={activeItem === 'Home'}>
-                    <span>Home</span>
+                <MenuItem>
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) => (isActive ? 'active' : '')}
+                    >
+                        Home
+                    </NavLink>
                 </MenuItem>
-                <MenuItem
-                    isActive={activeItem === 'Pages'}
-                    onClick={() => setActiveItem('Pages')}
-                >
-                    <span>Pages</span>
+                <MenuItem>
+                    <NavLink
+                        to="/pages"
+                        className={({ isActive }) => (isActive ? 'active' : '')}
+                    >
+                        Pages
+                    </NavLink>
                 </MenuItem>
-                <MenuItem isActive={activeItem === 'Case Studies'}>
-                    <span>Case Studies</span>
+                <MenuItem>
+                    <NavLink
+                        to="/case_studies"
+                        className={({ isActive }) => (isActive ? 'active' : '')}
+                    >
+                        Case Studies
+                    </NavLink>
                 </MenuItem>
-                <MenuItem isActive={activeItem === 'Elements'}>
-                    <span>Elements</span>
+                <MenuItem>
+                    <NavLink
+                        to="/elements"
+                        className={({ isActive }) => (isActive ? 'active' : '')}
+                    >
+                        Elements
+                    </NavLink>
                 </MenuItem>
-                <MenuItem isActive={activeItem === 'Blog'}>
-                    <span>Blog</span>
+                <MenuItem>
+                    <NavLink
+                        to="/blog"
+                        className={({ isActive }) => (isActive ? 'active' : '')}
+                    >
+                        Blog
+                    </NavLink>
                 </MenuItem>
-                <MenuItem isActive={activeItem === 'Contact'}>
-                    <span>Contact</span>
+                <MenuItem>
+                    <NavLink
+                        to="/contact"
+                        className={({ isActive }) => (isActive ? 'active' : '')}
+                    >
+                        Contact
+                    </NavLink>
                 </MenuItem>
                 <SeoButton>FREE SEO ANALYSIS</SeoButton>
             </NavMenu>
-        </NavWrapper>
+        </Container>
     );
 };
 
 export default Nav;
 
-const NavWrapper = styled.div`
+const Container = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
@@ -58,18 +83,24 @@ const NavMenu = styled.ul`
     list-style: none;
 `;
 
-const MenuItem = styled.li<{ isActive: boolean }>`
+const MenuItem = styled.li`
     padding: 0 15px;
     cursor: pointer;
 
-    span {
-        color: ${(props) => (props.isActive ? 'rgb(52, 152, 219)' : 'inherit')};
+    a {
         font-size: 16px;
         font-weight: 500;
-    }
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s ease;
 
-    &:hover {
-        color: rgb(52, 152, 219);
+        &.active {
+            color: rgb(52, 152, 219);
+        }
+
+        &:hover {
+            color: rgb(52, 152, 219);
+        }
     }
 `;
 
