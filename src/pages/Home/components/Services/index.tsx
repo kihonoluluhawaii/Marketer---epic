@@ -1,23 +1,24 @@
-import serviceImg1 from '../../../public/images/services1.jpg';
-import serviceImg2 from '../../../public/images/services2.jpg';
-import serviceImg3 from '../../../public/images/services3.jpg';
+/** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
+import ImageResource from '@/components/ImageResouce/ImageResource.tsx';
+import SectionHeader from '../SectionHeader.tsx';
 
 const ServiceSection = () => {
     return (
-        <ServiceSectionWrapper>
-            <ServiceSectionHeader>
-                <h2>Amazing Features</h2>
-                <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority
-                    <br /> have suffered alteration, by injected humour, or new
-                    randomised words.
-                </p>
-            </ServiceSectionHeader>
+        <Container>
+            <SectionHeader
+                title="Amazing Features"
+                subtitle={`There are many variations of passages of Lorem Ipsum available, but the majority
+                have suffered alteration, by injected humour, or new randomised words.`}
+            />
+
             <ServiceLists>
                 <Service>
-                    <img src={serviceImg1} alt={'service image'} />
+                    <ImageStyled
+                        name={'service1'}
+                        alt={'services1 image'}
+                        width={120}
+                    />
                     <h3>Fully Customizable</h3>
                     <p>
                         Curabitur quam etsum lacus etsumis nulat
@@ -26,7 +27,11 @@ const ServiceSection = () => {
                     </p>
                 </Service>
                 <Service>
-                    <img src={serviceImg2} alt={'service image'} />
+                    <ImageStyled
+                        name={'service2'}
+                        alt={'services1 image'}
+                        width={120}
+                    />
                     <h3>Fully Customizable</h3>
                     <p>
                         Curabitur quam etsum lacus etsumis nulat
@@ -36,7 +41,11 @@ const ServiceSection = () => {
                     </p>
                 </Service>
                 <Service>
-                    <img src={serviceImg3} alt={'service image'} />
+                    <ImageStyled
+                        name={'service3'}
+                        alt={'services1 image'}
+                        width={120}
+                    />
                     <h3>Fully Customizable</h3>
                     <p>
                         Curabitur quam etsum lacus etsumis nulat
@@ -46,39 +55,19 @@ const ServiceSection = () => {
                     </p>
                 </Service>
             </ServiceLists>
-        </ServiceSectionWrapper>
+        </Container>
     );
 };
 
 export default ServiceSection;
 
-const ServiceSectionWrapper = styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 90px 0 50px;
     color: #7c8595;
     border-top: 1px solid rgb(234, 234, 234);
-`;
-
-const ServiceSectionHeader = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    h2 {
-        margin-bottom: 15px;
-        font-size: 32px;
-        color: #2f362f;
-    }
-
-    p {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-    }
 `;
 
 const ServiceLists = styled.ul`
@@ -107,9 +96,8 @@ const Service = styled.li`
     align-items: center;
     margin: 30px 0;
     padding: 0 30px;
+`;
 
-    img {
-        width: 120px;
-        border-radius: 50%;
-    }
+const ImageStyled = styled(ImageResource)`
+    border-radius: 50%;
 `;

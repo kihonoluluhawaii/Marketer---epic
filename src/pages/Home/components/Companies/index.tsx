@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import partner2Img from '../../../public/images/partner1.png';
-import partner1Img from '../../../public/images/partner2.png';
-import partner3Img from '../../../public/images/partner3.png';
-import partner5Img from '../../../public/images/partner4.png';
-import partner4Img from '../../../public/images/partner5.png';
+import partner1Img from '/images/partner1.png';
+import partner2Img from '/images/partner2.png';
+import partner3Img from '/images/partner3.png';
+import partner4Img from '/images/partner4.png';
+import partner5Img from '/images/partner5.png';
 
 const images = [
     { src: partner1Img, alt: 'partner 1' },
