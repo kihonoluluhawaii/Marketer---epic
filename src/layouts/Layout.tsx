@@ -9,11 +9,11 @@ const LayoutWrapper = styled.div`
     align-items: center;
 `;
 
-type LayoutProps = {
+type Props = {
     children: ReactNode;
 };
 
-function Layout({ children }: LayoutProps) {
+function Layout({ children }: Props) {
     return <LayoutWrapper>{children}</LayoutWrapper>;
 }
 
