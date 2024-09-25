@@ -4,6 +4,11 @@ const imageList = {
     service1: '/images/services1.jpg',
     service2: '/images/services2.jpg',
     service3: '/images/services3.jpg',
+    partner1: '/images/partner1.png',
+    partner2: '/images/partner2.png',
+    partner3: '/images/partner3.png',
+    partner4: '/images/partner4.png',
+    partner5: '/images/partner5.png',
 };
 
 type ImageName = keyof typeof imageList;
