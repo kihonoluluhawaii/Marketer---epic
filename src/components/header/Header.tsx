@@ -6,71 +6,60 @@ const Header = () => {
         <Container>
             <HeaderTopContainer>
                 <HeaderTopLeft>
-                    <SnsIconWrapper>
+                    <SnsLink activeColor={'black'}>
                         <Icon
-                            name="x"
-                            wrapperSize={42}
+                            name="close"
                             size={17}
                             color={'rgb(228, 241, 254)'}
-                            activeColor={'skyblue'}
                         />
-                    </SnsIconWrapper>
-                    <SnsIconWrapper>
+                    </SnsLink>
+                    <SnsLink activeColor={'#f28'}>
                         <Icon
                             name="pinterest"
-                            wrapperSize={42}
                             size={17}
                             color={'rgb(228, 241, 254)'}
-                            activeColor={'#f28'}
                         />
-                    </SnsIconWrapper>
-                    <SnsIconWrapper>
+                    </SnsLink>
+                    <SnsLink activeColor={'#4267B2'}>
                         <Icon
                             name="facebook"
-                            wrapperSize={42}
                             size={17}
                             color={'rgb(228, 241, 254)'}
-                            activeColor={'#f28'}
                         />
-                    </SnsIconWrapper>
-                    <SnsIconWrapper>
+                    </SnsLink>
+                    <SnsLink activeColor={'#c13584'}>
                         <Icon
                             name="instagram"
-                            wrapperSize={42}
                             size={17}
                             color={'rgb(228, 241, 254)'}
                             activeColor={'#f28'}
                         />
-                    </SnsIconWrapper>
-                    <SnsIconWrapper>
+                    </SnsLink>
+                    <SnsLink activeColor={'skyblue'}>
                         <Icon
                             name="skype"
-                            wrapperSize={42}
                             size={17}
                             color={'rgb(228, 241, 254)'}
-                            activeColor={'#f28'}
                         />
-                    </SnsIconWrapper>
+                    </SnsLink>
                 </HeaderTopLeft>
                 <HeaderTopRight>
-                    <LocationNumberWrapper>
+                    <Contact>
                         <Icon
                             name="phone"
-                            wrapperSize={32}
                             size={20}
                             color={'rgb(228, 241, 254)'}
                         />
-                        <span> 1-9870654-3210</span>
-                    </LocationNumberWrapper>
-                    <LocationNumberWrapper>
+                        <p> 1-987-0654-3210 </p>
+                    </Contact>
+                    <Contact>
                         <Icon
                             name="location"
-                            wrapperSize={32}
                             size={20}
                             color={'rgb(228, 241, 254)'}
                         />
-                        <span> 123, Regal Garden, London, UK</span>
-                    </LocationNumberWrapper>
+                        <p> 123, Regal Garden, London, UK </p>
+                    </Contact>
                 </HeaderTopRight>
             </HeaderTopContainer>
         </Container>
@@ -100,18 +89,31 @@ const HeaderTopLeft = styled.div`
     align-items: center;
 `;
 
+const SnsLink = styled.div<{ activeColor?: string }>`
+    display: flex;
+    padding: 12px;
+    border-right: 1px solid rgb(228, 241, 254, 0.15);
+
+    &:hover {
+        background-color: ${({ activeColor }) => activeColor};
+    }
+`;
+
 const HeaderTopRight = styled.div`
     display: flex;
     gap: 20px;
 `;
 
-const LocationNumberWrapper = styled.div`
+const Contact = styled.div`
     display: flex;
     align-items: center;
-    color: rgb(228, 241, 254);
-`;
 
-const SnsIconWrapper = styled.div`
-    display: flex;
-    border-right: 1px solid rgb(228, 241, 254, 0.15);
+    gap: 10px;
+    color: rgb(228, 241, 254);
+
+    p {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+    }
 `;

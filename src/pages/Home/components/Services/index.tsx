@@ -1,8 +1,46 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
-import ImageResource from '@/components/ImageResouce/ImageResource.tsx';
+import ImageResource, {
+    ImageName,
+} from '../../../../components/ImageResouce/ImageResource.tsx';
 import SectionHeader from '../SectionHeader.tsx';
 
+// const partnerList: Array<{ name: ImageName; alt: string }> = [
+//     { name: 'partner1', alt: 'partner1 image' },
+//     { name: 'partner2', alt: 'partner2 image' },
+//     { name: 'partner3', alt: 'partner3 image' },
+//     { name: 'partner4', alt: 'partner4 image' },
+//     { name: 'partner5', alt: 'partner5 image' },
+// ];
+
+const serviceData: Array<{
+    name: ImageName;
+    alt: string;
+    title: string;
+    description: string;
+}> = [
+    {
+        name: 'service1',
+        alt: 'service1 image',
+        title: 'Fully Customizable',
+        description:
+            'Curabitur quam etsum lacus etsumis nulat\niaculis ets vitae etsum nisle varius sed aliquam\nets vitae dictis netsum.',
+    },
+    {
+        name: 'service2',
+        alt: 'service2 image',
+        title: 'Fully Customizable',
+        description:
+            'Curabitur quam etsum lacus etsumis nulat\niaculis ets vitae etsum nisle varius sed aliquam\nets vitae dictis netsum.',
+    },
+    {
+        name: 'service3',
+        alt: 'service3 image',
+        title: 'Fully Customizable',
+        description:
+            'Curabitur quam etsum lacus etsumis nulat\niaculis ets vitae etsum nisle varius sed aliquam\nets vitae dictis netsum.',
+    },
+];
 const ServiceSection = () => {
     return (
         <Container>
@@ -13,47 +51,17 @@ const ServiceSection = () => {
             />
 
             <ServiceLists>
-                <Service>
-                    <ImageStyled
-                        name={'service1'}
-                        alt={'services1 image'}
-                        width={120}
-                    />
-                    <h3>Fully Customizable</h3>
-                    <p>
-                        Curabitur quam etsum lacus etsumis nulat
-                        <br /> iaculis ets vitae etsum nisle varius sed aliquam
-                        <br /> ets vitae dictis netsum.
-                    </p>
-                </Service>
-                <Service>
-                    <ImageStyled
-                        name={'service2'}
-                        alt={'services1 image'}
-                        width={120}
-                    />
-                    <h3>Fully Customizable</h3>
-                    <p>
-                        Curabitur quam etsum lacus etsumis nulat
-                        <br /> iaculis ets vitae etsum nisle varius sed aliquam
-                        <br />
-                        ets vitae dictis netsum.
-                    </p>
-                </Service>
-                <Service>
-                    <ImageStyled
-                        name={'service3'}
-                        alt={'services1 image'}
-                        width={120}
-                    />
-                    <h3>Fully Customizable</h3>
-                    <p>
-                        Curabitur quam etsum lacus etsumis nulat
-                        <br /> iaculis ets vitae etsum nisle varius sed aliquam
-                        <br />
-                        ets vitae dictis netsum.
-                    </p>
-                </Service>
+                {serviceData.map((item, index) => (
+                    <Service key={index}>
+                        <ImageStyled
+                            name={item.name}
+                            alt={item.alt}
+                            width={120}
+                        />
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                    </Service>
+                ))}
             </ServiceLists>
         </Container>
     );
@@ -87,6 +95,7 @@ const ServiceLists = styled.ul`
         font-size: 16px;
         font-weight: 400;
         line-height: 24px;
+        white-space: pre-line;
     }
 `;
 

@@ -1,53 +1,44 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { iconList } from './IconList.tsx';
+import { getReactIcon, ReactIconsType } from './IconList.tsx';
 
-type Props = {
-    name: keyof typeof iconList;
+interface Props {
+    name: ReactIconsType;
     size?: number;
     color?: string;
     activeColor?: string;
-    wrapperSize?: number;
-};
+}
 
-const Icon: React.FC<Props> = ({
+const Icon = ({
     name,
     size = 24,
     color = 'black',
-    activeColor,
-    wrapperSize,
-}) => {
-    const IconSvg = iconList[name];
+    activeColor = '',
+}: Props) => {
+    const Component = getReactIcon(name);
 
     return (
-        <IconWrapper activeColor={activeColor} wrapperSize={wrapperSize}>
-            <IconStyled>
-                <IconSvg color={color} size={size} />
-            </IconStyled>
-        </IconWrapper>
+        <Container size={size} activeColor={activeColor} color={color}>
+            <Component />
+        </Container>
     );
 };
 
-export const IconWrapper = styled.div<{
-    activeColor?: string;
-    wrapperSize?: number;
+export const Container = styled.div<{
+    size: number;
+    activeColor: string;
+    color: string;
 }>`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: ${(props) => `${props.wrapperSize}px`};
-    height: ${(props) => `${props.wrapperSize}px`};
-    box-sizing: border-box;
+    width: ${({ size }) => `${size}px`};
+    height: ${({ size }) => `${size}px`};
+    color: ${({ color }) => color};
     cursor: pointer;
 
     &:hover {
-        background-color: ${(props) => props.activeColor};
+        background-color: ${({ activeColor }) => activeColor};
     }
-`;
-
-export const IconStyled = styled.div<{ size?: number }>`
-    width: ${(props) => `${props.size}px`}
-    height: ${(props) => `${props.size}px`}
 `;
 
 export default Icon;

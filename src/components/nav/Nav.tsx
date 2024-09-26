@@ -2,61 +2,36 @@ import pencilIcon from '../../../public/images/pencil.png';
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
+const menuItems = [
+    { to: '/', text: 'Home' },
+    { to: '/pages', text: 'Pages' },
+    { to: '/case_studies', text: 'Case Studies' },
+    { to: '/elements', text: 'Elements' },
+    { to: '/blog', text: 'Blog' },
+    { to: '/contact', text: 'Contact' },
+];
+
 const Nav = () => {
     return (
         <Container>
-            <MainLogo src={pencilIcon} alt={'pencil icon'} />
-            <NavMenu>
-                <MenuItem>
-                    <NavLink
-                        to="/"
-                        className={({ isActive }) => (isActive ? 'active' : '')}
-                    >
-                        Home
-                    </NavLink>
-                </MenuItem>
-                <MenuItem>
-                    <NavLink
-                        to="/pages"
-                        className={({ isActive }) => (isActive ? 'active' : '')}
-                    >
-                        Pages
-                    </NavLink>
-                </MenuItem>
-                <MenuItem>
-                    <NavLink
-                        to="/case_studies"
-                        className={({ isActive }) => (isActive ? 'active' : '')}
-                    >
-                        Case Studies
-                    </NavLink>
-                </MenuItem>
-                <MenuItem>
-                    <NavLink
-                        to="/elements"
-                        className={({ isActive }) => (isActive ? 'active' : '')}
-                    >
-                        Elements
-                    </NavLink>
-                </MenuItem>
-                <MenuItem>
-                    <NavLink
-                        to="/blog"
-                        className={({ isActive }) => (isActive ? 'active' : '')}
-                    >
-                        Blog
-                    </NavLink>
-                </MenuItem>
-                <MenuItem>
-                    <NavLink
-                        to="/contact"
-                        className={({ isActive }) => (isActive ? 'active' : '')}
-                    >
-                        Contact
-                    </NavLink>
-                </MenuItem>
-                <SeoButton>FREE SEO ANALYSIS</SeoButton>
-            </NavMenu>
+            <ContentContainer>
+                <MainLogo src={pencilIcon} alt={'pencil icon'} />
+                <NavMenu>
+                    {menuItems.map((item) => (
+                        <MenuItem key={item.to}>
+                            <NavLink
+                                to={item.to}
+                                className={({ isActive }) =>
+                                    isActive ? 'active' : ''
+                                }
+                            >
+                                {item.text}
+                            </NavLink>
+                        </MenuItem>
+                    ))}
+                    <SeoButton>FREE SEO ANALYSIS</SeoButton>
+                </NavMenu>
+            </ContentContainer>
         </Container>
     );
 };
@@ -64,10 +39,13 @@ const Nav = () => {
 export default Nav;
 
 const Container = styled.div`
+    max-width: 1140px;
+    margin: 0 auto;
+`;
+
+const ContentContainer = styled.div`
     display: flex;
     align-items: center;
-    width: 100%;
-    max-width: 1140px;
     height: 88px;
 `;
 
