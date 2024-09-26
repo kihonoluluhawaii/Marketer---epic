@@ -1,6 +1,7 @@
 import pencilIcon from '../../../public/images/pencil.png';
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
+import Icon from '../Icon/Icon.tsx';
 
 const menuItems = [
     { to: '/', text: 'Home' },
@@ -62,8 +63,13 @@ const NavMenu = styled.ul`
 `;
 
 const MenuItem = styled.li`
-    padding: 0 15px;
+    position: relative;
+    padding: 15px 15px;
     cursor: pointer;
+
+    &:hover > div {
+        display: flex;
+    }
 
     a {
         font-size: 16px;
@@ -79,6 +85,33 @@ const MenuItem = styled.li`
         &:hover {
             color: rgb(52, 152, 219);
         }
+    }
+`;
+
+const BasicListDropdown = styled.div`
+    position: absolute;
+    top: 32px;
+    left: -14px;
+    padding-top: 12px;
+    margin-top: -30px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: white;
+`;
+
+const BasicListItem = styled.div`
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(124, 133, 149);
+    border-bottom: 1px solid #eaeaea;
+
+    &:hover {
+        color: rgb(52, 152, 219);
+    }
+
+    &:last-child {
+        border-bottom: none;
     }
 `;
 

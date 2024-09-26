@@ -49,6 +49,7 @@ const ServiceSection = () => {
                 title="Amazing Features"
                 subtitle={`There are many variations of passages of Lorem Ipsum available, but the majority
                 have suffered alteration, by injected humour, or new randomised words.`}
+                subTitleColor="7c8595"
             />
 
             <ServiceLists>

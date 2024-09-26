@@ -5,9 +5,17 @@ type Props = {
     title: string;
     subtitle?: string;
     className?: string;
+    titleColor?: string;
+    subTitleColor?: string;
 };
 
-const SectionHeader: React.FC<Props> = ({ title, subtitle, className }) => {
+const SectionHeader: React.FC<Props> = ({
+    title,
+    subtitle,
+    className,
+    titleColor,
+    subTitleColor,
+}) => {
     return (
         <Container className={className}>
             <h2>{title}</h2>
@@ -29,7 +37,7 @@ const Container = styled.div`
     h2 {
         margin-bottom: 15px;
         font-size: 32px;
-        color: #2f362f;
+        color: ${(props) => (props.titleColor ? props.titleColor : 'black')};
     }
 
     p {
@@ -37,5 +45,7 @@ const Container = styled.div`
         font-weight: 400;
         line-height: 24px;
         white-space: pre-line;
+        color: ${(props) =>
+            props.subTitleColor ? props.subTitleColor : 'black'};
     }
 `;
