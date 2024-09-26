@@ -1,34 +1,27 @@
 import styled from '@emotion/styled';
-import ImageResource from '../../../../components/ImageResouce/ImageResource.tsx';
+import ImageResource, {
+    ImageName,
+} from '../../../../components/ImageResouce/ImageResource.tsx';
+
+const partnerList: Array<{ name: ImageName; alt: string }> = [
+    { name: 'partner1', alt: 'partner1 image' },
+    { name: 'partner2', alt: 'partner2 image' },
+    { name: 'partner3', alt: 'partner3 image' },
+    { name: 'partner4', alt: 'partner4 image' },
+    { name: 'partner5', alt: 'partner5 image' },
+];
 
 const Companies = () => {
     return (
         <Container>
-            <PartnersLogoImage
-                name="partner1"
-                alt="partner1 image"
-                height={28}
-            />
-            <PartnersLogoImage
-                name="partner2"
-                alt="partner2 image"
-                height={28}
-            />
-            <PartnersLogoImage
-                name="partner3"
-                alt="partner3 image"
-                height={28}
-            />
-            <PartnersLogoImage
-                name="partner4"
-                alt="partner4 image"
-                height={28}
-            />
-            <PartnersLogoImage
-                name="partner5"
-                alt="partner5 image"
-                height={28}
-            />
+            {partnerList.map((item) => (
+                <PartnersLogoImage
+                    key={item.name}
+                    name={item.name}
+                    alt={item.alt}
+                    height={28}
+                />
+            ))}
         </Container>
     );
 };

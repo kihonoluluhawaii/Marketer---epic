@@ -9,9 +9,9 @@ const imageList = {
     partner3: '/images/partner3.png',
     partner4: '/images/partner4.png',
     partner5: '/images/partner5.png',
-};
+} as const;
 
-type ImageName = keyof typeof imageList;
+export type ImageName = keyof typeof imageList;
 
 type Props = {
     name: ImageName;

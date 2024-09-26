@@ -2,11 +2,9 @@ import styled from '@emotion/styled';
 
 import { ReactNode } from 'react';
 
-const LayoutWrapper = styled.div`
+const Container = styled.div`
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0 auto;
 `;
 
 type Props = {
@@ -14,7 +12,7 @@ type Props = {
 };
 
 function Layout({ children }: Props) {
-    return <LayoutWrapper>{children}</LayoutWrapper>;
+    return <Container>{children}</Container>;
 }
 
 export { Layout };

@@ -9,16 +9,16 @@ type Props = {
 
 const SectionHeader: React.FC<Props> = ({ title, subtitle, className }) => {
     return (
-        <SectionHeaderWrapper className={className}>
+        <Container className={className}>
             <h2>{title}</h2>
             {subtitle && <p>{subtitle}</p>}
-        </SectionHeaderWrapper>
+        </Container>
     );
 };
 
 export default SectionHeader;
 
-const SectionHeaderWrapper = styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
