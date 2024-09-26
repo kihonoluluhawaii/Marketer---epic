@@ -15,7 +15,9 @@
     "@emotion/styled": "^11.13.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "swiper": "^11.1.14"
+    "react-router-dom": "^6.26.2",
+    "swiper": "^11.1.14",
+    "vite-tsconfig-paths": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
