@@ -6,6 +6,7 @@ import Insights from './components/Insights';
 import Recommend from './components/Recommend';
 import News from './components/News';
 import Team from './components/Team';
+import Process from './components/Process';
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
             <Recommend />
             <News />
             <Team />
+            <Process />
         </>
     );
 };

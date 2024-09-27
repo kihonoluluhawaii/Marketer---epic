@@ -30,6 +30,11 @@ const imageList = {
     news1: '/images/news1.jpg',
     news2: '/images/news2.jpg',
     news3: '/images/news3.jpg',
+    process1: '/images/process1.jpg',
+    process2: '/images/process2.jpg',
+    process3: '/images/process3.jpg',
+    process4: '/images/process4.jpg',
+    process5: '/images/process5.jpg',
 } as const;
 
 export type ImageName = keyof typeof imageList;
