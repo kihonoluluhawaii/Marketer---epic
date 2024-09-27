@@ -41,7 +41,7 @@ const Container = styled.div<{ titleColor?: string; subTitleColor?: string }>`
     h2 {
         margin-bottom: 15px;
         font-size: 32px;
-        color: ${({ titleColor }) => (titleColor ? titleColor : 'black')};
+        color: ${({ titleColor }) => (titleColor ? titleColor : '#2f362f')};
     }
 
     p {
@@ -50,6 +50,6 @@ const Container = styled.div<{ titleColor?: string; subTitleColor?: string }>`
         line-height: 24px;
         white-space: pre-line;
         color: ${({ subTitleColor }) =>
-            subTitleColor ? subTitleColor : 'black'};
+            subTitleColor ? subTitleColor : '#7c8595'};
     }
 `;
