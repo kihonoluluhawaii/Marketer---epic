@@ -4,6 +4,7 @@ import { Pagination } from 'swiper/modules';
 import ImageResource, {
     ImageName,
 } from '../../../../components/ImageResouce/ImageResource.tsx';
+import { useEffect, useRef } from 'react';
 
 const swiperData: Array<{
     title: string;
@@ -35,8 +36,15 @@ const swiperData: Array<{
 ];
 
 const MainSwiper = () => {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (containerRef.current) {
+            containerRef.current.style.backgroundColor = swiperData[0].bgColor;
+        }
+    });
     return (
-        <Container>
+        <Container ref={containerRef}>
             <StyledSwiper
                 direction={'vertical'}
                 slidesPerView={1}
@@ -46,11 +54,8 @@ const MainSwiper = () => {
                 modules={[Pagination]}
                 allowTouchMove={true}
                 onSlideChange={(swiper) => {
-                    const container = swiper.el.closest(
-                        '[data-swiper-container]',
-                    ) as HTMLElement;
-                    if (container) {
-                        container.style.backgroundColor =
+                    if (containerRef.current) {
+                        containerRef.current.style.backgroundColor =
                             swiperData[swiper.activeIndex].bgColor;
                     }
                 }}
