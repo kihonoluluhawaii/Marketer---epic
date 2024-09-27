@@ -25,7 +25,7 @@ const reviewList: Array<{
                         etsa lorem nibh ligula et evenit praesent autim fugit
                         justo et sed tempor."`,
         reviewerImage: 'client2',
-        reviewerName: 'CRISTINA RICHARDS',
+        reviewerName: 'SONG KIM',
         reviewerRole: 'CEO - SmartDesign',
     },
     {
@@ -34,7 +34,7 @@ const reviewList: Array<{
                         etsa lorem nibh ligula et evenit praesent autim fugit
                         justo et sed tempor."`,
         reviewerImage: 'client3',
-        reviewerName: 'CRISTINA RICHARDS',
+        reviewerName: 'CRISTIANO RONALDO',
         reviewerRole: 'CEO - SmartDesign',
     },
 ];

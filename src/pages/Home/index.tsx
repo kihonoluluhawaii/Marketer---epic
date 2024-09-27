@@ -7,6 +7,7 @@ import Recommend from './components/Recommend';
 import News from './components/News';
 import Team from './components/Team';
 import Process from './components/Process';
+import SendEmail from './components/SendEmail';
 
 const Home = () => {
     return (
@@ -20,6 +21,7 @@ const Home = () => {
             <News />
             <Team />
             <Process />
+            <SendEmail />
         </>
     );
 };

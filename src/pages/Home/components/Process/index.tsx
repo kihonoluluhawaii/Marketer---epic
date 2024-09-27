@@ -22,7 +22,7 @@ have suffered alteration, by injected humour, or new randomised words."
             />
             <Course>
                 {programList.map((item) => (
-                    <div>
+                    <div key={item.programId}>
                         <DottedCircle>
                             <ImageResource
                                 name={item.name}
