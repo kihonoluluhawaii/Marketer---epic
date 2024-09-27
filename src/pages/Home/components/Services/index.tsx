@@ -6,14 +6,6 @@ import ImageResource, {
 import SectionHeader from '../SectionHeader.tsx';
 import ServiceIntroduction from './ServiceIntroduction.tsx';
 
-// const partnerList: Array<{ name: ImageName; alt: string }> = [
-//     { name: 'partner1', alt: 'partner1 image' },
-//     { name: 'partner2', alt: 'partner2 image' },
-//     { name: 'partner3', alt: 'partner3 image' },
-//     { name: 'partner4', alt: 'partner4 image' },
-//     { name: 'partner5', alt: 'partner5 image' },
-// ];
-
 const serviceData: Array<{
     name: ImageName;
     alt: string;

@@ -1,7 +1,6 @@
 import pencilIcon from '../../../public/images/pencil.png';
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
-import Icon from '../Icon/Icon.tsx';
 
 const menuItems = [
     { to: '/', text: 'Home' },
@@ -87,33 +86,33 @@ const MenuItem = styled.li`
         }
     }
 `;
-
-const BasicListDropdown = styled.div`
-    position: absolute;
-    top: 32px;
-    left: -14px;
-    padding-top: 12px;
-    margin-top: -30px;
-    box-sizing: border-box;
-    border-radius: 4px;
-    background-color: white;
-`;
-
-const BasicListItem = styled.div`
-    padding: 12px 20px;
-    font-size: 14px;
-    font-weight: 400;
-    color: rgb(124, 133, 149);
-    border-bottom: 1px solid #eaeaea;
-
-    &:hover {
-        color: rgb(52, 152, 219);
-    }
-
-    &:last-child {
-        border-bottom: none;
-    }
-`;
+//
+// const BasicListDropdown = styled.div`
+//     position: absolute;
+//     top: 32px;
+//     left: -14px;
+//     padding-top: 12px;
+//     margin-top: -30px;
+//     box-sizing: border-box;
+//     border-radius: 4px;
+//     background-color: white;
+// `;
+//
+// const BasicListItem = styled.div`
+//     padding: 12px 20px;
+//     font-size: 14px;
+//     font-weight: 400;
+//     color: rgb(124, 133, 149);
+//     border-bottom: 1px solid #eaeaea;
+//
+//     &:hover {
+//         color: rgb(52, 152, 219);
+//     }
+//
+//     &:last-child {
+//         border-bottom: none;
+//     }
+// `;
 
 const SeoButton = styled.button`
     padding: 17px 20px;

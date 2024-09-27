@@ -4,12 +4,57 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
-import ImageResource from '../../../../components/ImageResouce/ImageResource.tsx';
+import ImageResource, {
+    ImageName,
+} from '../../../../components/ImageResouce/ImageResource.tsx';
 
 type ProjectDescProps = {
     desc: string;
     feature: string;
 };
+const projectList: Array<{
+    name: ImageName;
+    alt: string;
+    desc: string;
+    feature: string;
+}> = [
+    {
+        name: 'portfolio1',
+        alt: 'portfolio1 image',
+        desc: 'Safe Payment Method',
+        feature: 'PPC | eCommerce',
+    },
+    {
+        name: 'portfolio2',
+        alt: 'portfolio2 image',
+        desc: 'Social Media Promotion',
+        feature: 'SEO / Social Media',
+    },
+    {
+        name: 'portfolio3',
+        alt: 'portfolio3 image',
+        desc: 'Conversion Optimisation',
+        feature: 'SEO / Social Media',
+    },
+    {
+        name: 'portfolio4',
+        alt: 'portfolio4 image',
+        desc: 'Content Marketing',
+        feature: 'PPC | eCommerce',
+    },
+    {
+        name: 'portfolio5',
+        alt: 'portfolio5 image',
+        desc: 'Social Media Promotion',
+        feature: 'SEO / Social Media',
+    },
+    {
+        name: 'portfolio6',
+        alt: 'portfolio6 image',
+        desc: 'Conversion Optimisation',
+        feature: 'SEO / Social Media',
+    },
+];
 
 const ProjectCard: React.FC = () => {
     return (
@@ -32,53 +77,17 @@ const ProjectCardSwiper: React.FC = () => {
             modules={[Pagination]}
             allowTouchMove={false}
         >
-            <StyledSwiperSlide>
-                <ProjectImage name="portfolio1" alt="partner image" />
-                <ProjectDesc
-                    desc="Safe Payment Method"
-                    feature="PPC | eCommerce"
-                />
-            </StyledSwiperSlide>
-            <StyledSwiperSlide>
-                <ProjectImage name="portfolio2" alt="portfolio2 image" />
-                <ProjectDesc
-                    desc="Social Media Promotion"
-                    feature="SEO / Social Media"
-                />
-            </StyledSwiperSlide>
-            <StyledSwiperSlide>
-                <ProjectImage name="portfolio3" alt="portfolio3 image" />
-                <ProjectDesc
-                    desc="Conversion Optimisation"
-                    feature="SEO / Social Media"
-                />
-            </StyledSwiperSlide>
-            <StyledSwiperSlide>
-                <ProjectImage name="portfolio4" alt="portfolio4 image" />
-                <ProjectDesc
-                    desc="Content Marketing"
-                    feature="PPC | eCommerce"
-                />
-            </StyledSwiperSlide>
-            <StyledSwiperSlide>
-                <ProjectImage name="portfolio5" alt="portfolio5 image" />
-                <ProjectDesc
-                    desc="Social Media Promotion"
-                    feature="SEO / Social Media"
-                />
-            </StyledSwiperSlide>
-            <StyledSwiperSlide>
-                <ProjectImage name="portfolio6" alt="portfolio6 image" />
-                <ProjectDesc
-                    desc="Conversion Optimisation"
-                    feature="SEO / Social Media"
-                />
-            </StyledSwiperSlide>
+            {projectList.map((item, index) => (
+                <StyledSwiperSlide key={index}>
+                    <ProjectImage name={item.name} alt={item.alt} />
+                    <ProjectDesc desc={item.desc} feature={item.feature} />
+                </StyledSwiperSlide>
+            ))}
         </StyledSwiper>
     );
 };
 
-const ProjectDesc: React.FC<ProjectDescProps> = ({ desc, feature }) => {
+const ProjectDesc = ({ desc, feature }: ProjectDescProps) => {
     return (
         <StyledProjectDesc>
             <h2>{desc}</h2>
@@ -146,5 +155,3 @@ const StyledProjectDesc = styled.div`
         color: rgb(124, 133, 149);
     }
 `;
-
-const CardOverlay = styled.div``;
