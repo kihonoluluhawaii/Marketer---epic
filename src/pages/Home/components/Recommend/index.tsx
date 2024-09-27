@@ -80,7 +80,7 @@ const Container = styled.div`
 
 const RecommendCard = styled.div`
     display: flex;
-    margin: 0 auto;
+    margin: 60px auto 0;
     max-width: 1140px;
 `;
 

@@ -119,6 +119,11 @@ const ProjectImage = styled(ImageResource)`
     max-width: 350px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    transition: filter 0.3s ease;
+
+    &:hover {
+        filter: brightness(50%);
+    }
 `;
 
 const StyledProjectDesc = styled.div`

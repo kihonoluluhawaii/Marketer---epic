@@ -4,6 +4,7 @@ import MainSwiper from './components/MainSwiper/index.tsx';
 import Projects from './components/Projects';
 import Insights from './components/Insights';
 import Recommend from './components/Recommend';
+import News from './components/News';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Projects />
             <Insights />
             <Recommend />
+            <News />
         </>
     );
 };
