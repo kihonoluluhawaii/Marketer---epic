@@ -9,6 +9,9 @@ const imageList = {
     partner3: '/images/partner3.png',
     partner4: '/images/partner4.png',
     partner5: '/images/partner5.png',
+    logo1: '/images/rs1.png',
+    logo2: '/images/rs2.png',
+    logo3: '/images/rs3.png',
 } as const;
 
 export type ImageName = keyof typeof imageList;
