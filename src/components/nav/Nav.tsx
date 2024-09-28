@@ -1,34 +1,110 @@
-import pencilIcon from '../../../public/images/pencil.png';
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
-
-const menuItems = [
-    { to: '/', text: 'Home' },
-    { to: '/pages', text: 'Pages' },
-    { to: '/case_studies', text: 'Case Studies' },
-    { to: '/elements', text: 'Elements' },
-    { to: '/blog', text: 'Blog' },
-    { to: '/contact', text: 'Contact' },
-];
+import ImageResource from '../ImageResouce/ImageResource.tsx';
+import { Dropdown, DropdownWithBg, DropdownWithTitle } from './Dropdown.tsx';
 
 const Nav = () => {
     return (
         <Container>
             <ContentContainer>
-                <MainLogo src={pencilIcon} alt={'pencil icon'} />
+                <ImageResource
+                    name="mainlogo"
+                    alt="mainlogo image"
+                    width={172}
+                    height={45}
+                />
                 <NavMenu>
-                    {menuItems.map((item) => (
-                        <MenuItem key={item.to}>
-                            <NavLink
-                                to={item.to}
-                                className={({ isActive }) =>
-                                    isActive ? 'active' : ''
-                                }
-                            >
-                                {item.text}
-                            </NavLink>
-                        </MenuItem>
-                    ))}
+                    <MenuItem>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                isActive ? 'active' : ''
+                            }
+                        >
+                            Home
+                        </NavLink>
+                    </MenuItem>
+                    <MenuItem>
+                        <NavLink
+                            to="/pages"
+                            className={({ isActive }) =>
+                                isActive ? 'active' : ''
+                            }
+                        >
+                            Pages
+                        </NavLink>
+                        <DropdownWithTitle />
+                    </MenuItem>
+                    <MenuItem>
+                        <NavLink
+                            to="/case_studies"
+                            className={({ isActive }) =>
+                                isActive ? 'active' : ''
+                            }
+                        >
+                            Case Studies
+                        </NavLink>
+                        <Dropdown>
+                            <BasicListDropdown>
+                                <BasicListItem>Case Studies Main</BasicListItem>
+                                <BasicListItem>
+                                    Standard Two Columns
+                                </BasicListItem>
+                                <BasicListItem>
+                                    Gallery Two Columns
+                                </BasicListItem>
+                                <BasicListItem>
+                                    Standard Three Columns
+                                </BasicListItem>
+                                <BasicListItem>
+                                    Gallery Three Columns
+                                </BasicListItem>
+                                <BasicListItem>
+                                    Standard Four Columns
+                                </BasicListItem>
+                                <BasicListItem>
+                                    Gallery Four Columns
+                                </BasicListItem>
+                            </BasicListDropdown>
+                        </Dropdown>
+                    </MenuItem>
+                    <MenuItem>
+                        <NavLink
+                            to="/elements"
+                            className={({ isActive }) =>
+                                isActive ? 'active' : ''
+                            }
+                        >
+                            Elements
+                        </NavLink>
+                        <DropdownWithBg />
+                    </MenuItem>
+                    <MenuItem>
+                        <NavLink
+                            to="/blog"
+                            className={({ isActive }) =>
+                                isActive ? 'active' : ''
+                            }
+                        >
+                            Blog
+                        </NavLink>
+                        <Dropdown>
+                            <BasicListDropdown>
+                                <BasicListItem>Blog Listing</BasicListItem>
+                                <BasicListItem>Blog Single</BasicListItem>
+                            </BasicListDropdown>
+                        </Dropdown>
+                    </MenuItem>
+                    <MenuItem>
+                        <NavLink
+                            to="/contact"
+                            className={({ isActive }) =>
+                                isActive ? 'active' : ''
+                            }
+                        >
+                            Contact
+                        </NavLink>
+                    </MenuItem>
                     <SeoButton>FREE SEO ANALYSIS</SeoButton>
                 </NavMenu>
             </ContentContainer>
@@ -47,10 +123,10 @@ const ContentContainer = styled.div`
     display: flex;
     align-items: center;
     height: 88px;
-`;
 
-const MainLogo = styled.img`
-    width: 172px;
+    img {
+        cursor: pointer;
+    }
 `;
 
 const NavMenu = styled.ul`
@@ -63,8 +139,9 @@ const NavMenu = styled.ul`
 
 const MenuItem = styled.li`
     position: relative;
-    padding: 15px 15px;
+    padding: 30px 15px;
     cursor: pointer;
+    box-sizing: border-box;
 
     &:hover > div {
         display: flex;
@@ -86,33 +163,33 @@ const MenuItem = styled.li`
         }
     }
 `;
-//
-// const BasicListDropdown = styled.div`
-//     position: absolute;
-//     top: 32px;
-//     left: -14px;
-//     padding-top: 12px;
-//     margin-top: -30px;
-//     box-sizing: border-box;
-//     border-radius: 4px;
-//     background-color: white;
-// `;
-//
-// const BasicListItem = styled.div`
-//     padding: 12px 20px;
-//     font-size: 14px;
-//     font-weight: 400;
-//     color: rgb(124, 133, 149);
-//     border-bottom: 1px solid #eaeaea;
-//
-//     &:hover {
-//         color: rgb(52, 152, 219);
-//     }
-//
-//     &:last-child {
-//         border-bottom: none;
-//     }
-// `;
+
+const BasicListDropdown = styled.div`
+    position: absolute;
+    top: 32px;
+    left: -14px;
+    padding-top: 12px;
+    margin-top: -30px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: white;
+`;
+
+const BasicListItem = styled.div`
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(124, 133, 149);
+    border-bottom: 1px solid #eaeaea;
+
+    &:hover {
+        color: rgb(52, 152, 219);
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+`;
 
 const SeoButton = styled.button`
     padding: 17px 20px;

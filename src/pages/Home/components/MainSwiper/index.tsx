@@ -132,6 +132,7 @@ const TextContent = styled.div`
         border: 2px solid rgb(255, 255, 255);
         border-radius: 5px;
         background-color: inherit;
+        cursor: pointer;
     }
 `;
 

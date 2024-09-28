@@ -1,61 +1,208 @@
 import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
+import Icon from '../Icon/Icon.tsx';
 
 type Props = {
     children: ReactNode;
 };
 
-type DropdownTitleProps = {
-    title: string;
+type StyledDropdownProps = {
+    title?: string;
     subtitle?: string;
-    content: ReactNode[];
+    content?: ReactNode[];
 };
 
-export const Dropdown: React.FC<Props> = ({ children }) => {
+export const Dropdown = ({ children }: Props) => {
     return <Container>{children}</Container>;
 };
 
-export const DropdownWithTitle: React.FC<DropdownTitleProps> = ({
-    title,
-    subtitle,
-    content,
-}) => {
+export const DropdownWithTitle: React.FC<StyledDropdownProps> = () => {
     return (
-        <DropdownSection>
-            <DropdownHeader>
-                <Title>{title}</Title>
-                <SubTitle>{subtitle}</SubTitle>
-            </DropdownHeader>
-            <ContentList>
-                {content.map((item, index) => (
-                    <ContentItem key={index}>{item}</ContentItem>
-                ))}
-            </ContentList>
-        </DropdownSection>
+        <PagesDropdown>
+            <DropdownSection>
+                <DropdownHeader>
+                    <Title>About Marketer</Title>
+                    <SubTitle>Discover our company.</SubTitle>
+                </DropdownHeader>
+                <ContentList>
+                    <ContentItem>
+                        <Icon name="setting" size={15} color={'#7c8595'} />
+                        <span>Our Services</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="rocket" size={15} color={'#7c8595'} />
+                        <span>About Our Company</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="conversation" size={15} color={'#7c8595'} />
+                        <span>Our Amazing Team</span>
+                    </ContentItem>
+                </ContentList>
+            </DropdownSection>
+            <DropdownSection>
+                <DropdownHeader>
+                    <Title>Extra Pages</Title>
+                    <SubTitle>How we can help you.</SubTitle>
+                </DropdownHeader>
+                <ContentList>
+                    <ContentItem>
+                        <Icon name="dollar" size={15} color={'#7c8595'} />
+                        <span>Pricing Packages</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="liquid" size={15} color={'#7c8595'} />
+                        <span>The Latest News</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="magic" size={15} color={'#7c8595'} />
+                        <span>Testimonials</span>
+                    </ContentItem>
+                </ContentList>
+            </DropdownSection>
+        </PagesDropdown>
+    );
+};
+
+export const DropdownWithBg: React.FC<StyledDropdownProps> = () => {
+    return (
+        <ElementsDropDown>
+            <BgDropdownContent>
+                <DropdownHeader>
+                    <Title>About Marketer</Title>
+                    <SubTitle>Discover our company.</SubTitle>
+                </DropdownHeader>
+                <ContentList>
+                    <ContentItem>
+                        <Icon name="rocket" size={15} color={'#7c8595'} />
+                        <span>About Our Company</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="setting" size={15} color={'#7c8595'} />
+                        <span>Our Services</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="people" size={15} color={'#7c8595'} />
+                        <span>Social Media Promotion</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="location" size={15} color={'#7c8595'} />
+                        <span>Pricing Packages</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="bookmark" size={15} color={'#7c8595'} />
+                        <span>Our Clients</span>
+                    </ContentItem>
+                </ContentList>
+            </BgDropdownContent>
+            <BgDropdownContent>
+                <DropdownHeader>
+                    <Title>Our Services</Title>
+                    <SubTitle>How we can help you.</SubTitle>
+                </DropdownHeader>
+                <ContentList>
+                    <ContentItem>
+                        <Icon name="umbrella" size={15} color={'#7c8595'} />
+                        <span>Content Marketing</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="liquid" size={15} color={'#7c8595'} />
+                        <span>Social Media Promotion</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="crown" size={15} color={'#7c8595'} />
+                        <span> Affiliate Management</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="setting" size={15} color={'#7c8595'} />
+                        <span>SEO Optimisation</span>
+                    </ContentItem>
+                </ContentList>
+            </BgDropdownContent>
+            <BgDropdownContent>
+                <DropdownHeader>
+                    <Title>What We Do</Title>
+                    <SubTitle>Discover our portfolio.</SubTitle>
+                </DropdownHeader>
+                <ContentList>
+                    <ContentItem>
+                        <Icon name="trophy" size={15} color={'#7c8595'} />
+                        <span>Case Studies</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="phone" size={15} color={'#7c8595'} />
+                        <span>Portfolio Standard</span>
+                    </ContentItem>
+                    <ContentItem>
+                        <Icon name="conversation" size={15} color={'#7c8595'} />
+                        <span>Gallery</span>
+                    </ContentItem>
+                </ContentList>
+            </BgDropdownContent>
+            <BgDropdownContent>
+                <DropdownHeader>
+                    <Title style={{ whiteSpace: 'pre-line' }}>
+                        Creative Leading Agency for Search{'\n'} Engine
+                        Optimization.
+                    </Title>
+                </DropdownHeader>
+                <ContentList>
+                    <ContentItem>
+                        <span>
+                            ward-Winning SEO agency with content marketing and
+                            native advertising capabilities.
+                        </span>
+                    </ContentItem>
+                </ContentList>
+            </BgDropdownContent>
+        </ElementsDropDown>
     );
 };
 
 const Container = styled.div`
     display: none;
     position: absolute;
-    z-index: 1;
+    z-index: 1000;
 
     top: 100%;
     left: 0;
     min-width: 200px;
     border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+`;
+
+const PagesDropdown = styled.div`
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: -10px;
+    width: 480px;
+    padding: 20px 25px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: white;
+    cursor: auto;
+`;
+
+const ElementsDropDown = styled.div`
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: -710px;
+    width: 1150px;
+    padding: 20px 25px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: white;
+    cursor: auto;
+    background-image: url('/images/dropdownbg.png');
+    background-size: contain;
 `;
 
 const DropdownSection = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    min-width: 200px;
 
     box-sizing: border-box;
-    padding: 20px 25px;
-    border-radius: 4px;
-    background-color: white;
 `;
 
 const DropdownHeader = styled.div`
@@ -77,20 +224,29 @@ const SubTitle = styled.div`
     color: #7c8595;
 `;
 
-const ContentList = styled.div`
-    margin-top: 8px;
-`;
+const ContentList = styled.div``;
 
 const ContentItem = styled.div`
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     line-height: 28px;
     color: #7c8595;
-
+    cursor: pointer;
     &:hover {
         color: rgb(52, 152, 219);
+
+        > div {
+            color: rgb(52, 152, 219);
+        }
     }
+`;
+
+const BgDropdownContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-basis: 288px;
+    box-sizing: border-box;
 `;
