@@ -93,7 +93,7 @@ const SnsLink = styled.div<{ activeColor?: string }>`
     display: flex;
     padding: 12px;
     border-right: 1px solid rgb(228, 241, 254, 0.15);
-
+    cursor: pointer;
     &:hover {
         background-color: ${({ activeColor }) => activeColor};
     }

@@ -4,6 +4,7 @@ import Header from './components/header/Header.tsx';
 import Nav from './components/nav/Nav.tsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import Footer from './components/footer/Footer.tsx';
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                         {/*<Route path="/" element={<Blog />} />*/}
                         {/*<Route path="/" element={<Contact />} />*/}
                     </Routes>
+                    <Footer />
                 </Layout>
             </Router>
         </>

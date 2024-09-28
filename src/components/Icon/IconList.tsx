@@ -451,6 +451,40 @@ export const IconBookmark = () => (
     </svg>
 );
 
+export const IconLetter = () => (
+    <svg
+        width="100%"
+        height="100%"
+        fill="currentColor"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M0 0h48v48H0z" fill="none" />
+        <g id="Shopicon">
+            <path d="M42.371,8.8C41.705,8.304,40.89,8,40,8H8C7.11,8,6.295,8.304,5.629,8.8L24,27.172L42.371,8.8z" />
+            <path d="M4,12.828V36c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V12.828l-20,20L4,12.828z" />
+        </g>
+    </svg>
+);
+
+export const IconUp = () => (
+    <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M6 15L12 9L18 15"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+);
+
 export const reactIconsMap = {
     close: IconClose,
     pinterest: IconPinterest,
@@ -471,6 +505,8 @@ export const reactIconsMap = {
     conversation: IconConversation,
     people: IconPeople,
     bookmark: IconBookmark,
+    letter: IconLetter,
+    up: IconUp,
 };
 
 export type ReactIconsType = keyof typeof reactIconsMap;
