@@ -92,6 +92,10 @@ const NewsContainer = styled.div`
     margin: 0 auto;
     width: 100%;
     max-width: 1140px;
+
+    @media (max-width: 990px) {
+        flex-direction: column;
+    }
 `;
 
 const NewsCard = styled.div`
@@ -99,6 +103,9 @@ const NewsCard = styled.div`
     padding: 0 15px;
 
     img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
         transition: filter 0.3s ease;
 
         &:hover {

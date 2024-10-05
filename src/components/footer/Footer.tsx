@@ -57,6 +57,14 @@ const FooterTop = styled.div`
     padding: 60px 0;
     border-bottom: 2px dotted #999;
     color: #ffffff;
+
+    @media (max-width: 990px) {
+        flex-direction: column;
+
+        > div {
+            width: 100%;
+        }
+    }
 `;
 
 const FooterBottom = styled.div`

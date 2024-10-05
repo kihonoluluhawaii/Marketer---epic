@@ -57,6 +57,9 @@ const Container = styled.div`
     justify-content: center;
     color: #ffffff;
     background-color: #3498db;
+
+    @media (max-width: 990px) {
+    }
 `;
 
 const EmailSection = styled.div`
@@ -64,6 +67,12 @@ const EmailSection = styled.div`
     max-width: 960px;
     margin: 0 90px;
     padding: 50px 0;
+
+    @media (max-width: 990px) {
+        flex-direction: column;
+        align-items: center;
+        border: none;
+    }
 `;
 
 const EmailInput = styled.div<{ submitted: boolean }>`
@@ -117,5 +126,16 @@ const EmailInput = styled.div<{ submitted: boolean }>`
             background-color: #2980b9;
             color: #fff;
         }
+
+        @media (max-width: 990px) {
+            margin-top: 10px;
+        }
+    }
+
+    @media (max-width: 990px) {
+        border: none;
+        text-align: center;
+        margin-left: 0;
+        padding-left: 0;
     }
 `;

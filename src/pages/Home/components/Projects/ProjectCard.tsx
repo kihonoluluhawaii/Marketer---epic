@@ -7,6 +7,7 @@ import { Pagination } from 'swiper/modules';
 import ImageResource, {
     ImageName,
 } from '../../../../components/ImageResouce/ImageResource.tsx';
+import Icon from '../../../../components/Icon/Icon.tsx';
 
 type ProjectDescProps = {
     desc: string;
@@ -80,6 +81,9 @@ const ProjectCardSwiper: React.FC = () => {
             {projectList.map((item, index) => (
                 <StyledSwiperSlide key={index}>
                     <ProjectImage name={item.name} alt={item.alt} />
+                    <ImageOverlay>
+                        <Icon name="link" size={30} />
+                    </ImageOverlay>
                     <ProjectDesc desc={item.desc} feature={item.feature} />
                 </StyledSwiperSlide>
             ))}
@@ -99,7 +103,6 @@ const ProjectDesc = ({ desc, feature }: ProjectDescProps) => {
 const Container = styled.div`
     width: 100%;
     max-width: 1170px;
-    overflow: hidden;
 `;
 
 const StyledSwiper = styled(Swiper)`
@@ -108,6 +111,7 @@ const StyledSwiper = styled(Swiper)`
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,6 +121,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 const ProjectImage = styled(ImageResource)`
     width: 100%;
     max-width: 350px;
+    box-sizing: border-box;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     transition: filter 0.3s ease;
@@ -126,18 +131,27 @@ const ProjectImage = styled(ImageResource)`
     }
 `;
 
+const ImageOverlay = styled.div`
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &:hover {
+        cursor: pointer;
+    }
+`;
+
 const StyledProjectDesc = styled.div`
     width: 100%;
     max-width: 350px;
-    padding: 1px 20px 12px;
-    box-sizing: border-box;
+    padding: 10px 20px 12px;
     text-align: center;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     background-color: white;
 
     h2 {
-        margin-top: 20px;
         font-size: 18px;
         font-weight: 500;
         line-height: 20px;

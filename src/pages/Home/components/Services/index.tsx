@@ -92,6 +92,10 @@ const ServiceLists = styled.ul`
         line-height: 24px;
         white-space: pre-line;
     }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
 
 const Service = styled.li`

@@ -75,6 +75,10 @@ const Container = styled.div`
     justify-content: center;
     width: 100%;
     background-color: #333;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const HeaderTopContainer = styled.div`

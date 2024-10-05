@@ -86,9 +86,14 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     width: 100%;
     height: 500px;
     background-color: ${swiperData[0].bgColor};
+
+    @media (max-width: 1170px) {
+        padding: 0 20px;
+    }
 `;
 
 const StyledSwiper = styled(Swiper)`
@@ -102,24 +107,29 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 1170px) {
+        img {
+            width: 100%;
+        }
+    }
 `;
 
 const TextContent = styled.div`
     width: 550px;
     padding-right: 30px;
     color: rgb(255, 255, 255);
-
     text-align: left;
 
     h2 {
         margin-bottom: 20px;
-        font-size: 38px;
+        font-size: clamp(24px, 5vw, 38px);
         font-weight: 500;
     }
 
     p {
         margin-bottom: 30px;
-        font-size: 18px;
+        font-size: clamp(14px, 2vw, 18px);
         font-weight: 400;
         line-height: 28px;
     }

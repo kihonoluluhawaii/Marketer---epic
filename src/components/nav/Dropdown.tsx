@@ -146,7 +146,7 @@ export const DropdownWithBg: React.FC<StyledDropdownProps> = () => {
                     </Title>
                 </DropdownHeader>
                 <ContentList>
-                    <ContentItem>
+                    <ContentItem isLastItem>
                         <span>
                             ward-Winning SEO agency with content marketing and
                             native advertising capabilities.
@@ -162,11 +162,14 @@ const Container = styled.div`
     display: none;
     position: absolute;
     z-index: 1000;
-
     top: 100%;
     left: 0;
     min-width: 200px;
     border-radius: 4px;
+
+    @media (max-width: 990px) {
+        position: static;
+    }
 `;
 
 const PagesDropdown = styled.div`
@@ -181,6 +184,13 @@ const PagesDropdown = styled.div`
     overflow: hidden;
     background-color: white;
     cursor: auto;
+
+    @media (max-width: 990px) {
+        position: static;
+        width: 100%;
+        flex-direction: column;
+        padding: 10px;
+    }
 `;
 
 const ElementsDropDown = styled.div`
@@ -197,11 +207,18 @@ const ElementsDropDown = styled.div`
     cursor: auto;
     background-image: url('/images/dropdownbg.png');
     background-size: contain;
+
+    @media (max-width: 990px) {
+        background-image: none;
+        position: static;
+        width: auto;
+        flex-direction: column;
+        padding: 10px;
+    }
 `;
 
 const DropdownSection = styled.div`
     min-width: 200px;
-
     box-sizing: border-box;
 `;
 
@@ -210,6 +227,10 @@ const DropdownHeader = styled.div`
     flex-direction: column;
     gap: 8px;
     margin-block: 10px;
+
+    @media (max-width: 990px) {
+        display: none;
+    }
 `;
 
 const Title = styled.div`
@@ -226,7 +247,7 @@ const SubTitle = styled.div`
 
 const ContentList = styled.div``;
 
-const ContentItem = styled.div`
+const ContentItem = styled.div<{ isLastItem?: boolean }>`
     display: flex;
     align-items: center;
     gap: 6px;
@@ -234,13 +255,18 @@ const ContentItem = styled.div`
     font-weight: 400;
     line-height: 28px;
     color: #7c8595;
-    cursor: pointer;
+
     &:hover {
         color: rgb(52, 152, 219);
+        cursor: pointer;
 
         > div {
             color: rgb(52, 152, 219);
         }
+    }
+
+    @media (max-width: 990px) {
+        display: ${({ isLastItem }) => (isLastItem ? 'none' : 'flex')};
     }
 `;
 
@@ -249,4 +275,8 @@ const BgDropdownContent = styled.div`
     flex-direction: column;
     flex-basis: 288px;
     box-sizing: border-box;
+
+    @media (max-width: 990px) {
+        flex-basis: auto;
+    }
 `;

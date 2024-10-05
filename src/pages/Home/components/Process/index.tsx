@@ -55,12 +55,17 @@ const Course = styled.div`
     background-size: 1400px 180px;
     background-repeat: no-repeat;
     background-position: center;
+    flex-wrap: wrap;
 
     p {
         padding: 20px;
         font-size: 18px;
         font-weight: 700;
         color: #454545;
+    }
+
+    @media (max-width: 1109px) {
+        background-image: none;
     }
 `;
 

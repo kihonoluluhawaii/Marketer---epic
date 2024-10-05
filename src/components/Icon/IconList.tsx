@@ -266,7 +266,7 @@ export const IconLink = () => (
                 <rect width="32" height="32" />
             </clipPath>
         </defs>
-        <g id="link" clip-path="url(#clip-link)">
+        <g id="link" clipPath="url(#clip-link)">
             <g
                 id="Group_1840"
                 data-name="Group 1840"
