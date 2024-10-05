@@ -13,8 +13,8 @@ const SectionHeader: React.FC<Props> = ({
     title,
     subtitle,
     className,
-    titleColor,
-    subTitleColor,
+    titleColor = '#2f362f',
+    subTitleColor = '#7c8595',
 }) => {
     return (
         <Container
@@ -41,7 +41,7 @@ const Container = styled.div<{ titleColor?: string; subTitleColor?: string }>`
     h2 {
         margin-bottom: 15px;
         font-size: 32px;
-        color: ${({ titleColor }) => (titleColor ? titleColor : '#2f362f')};
+        color: ${({ titleColor }) => titleColor};
     }
 
     p {
@@ -49,7 +49,6 @@ const Container = styled.div<{ titleColor?: string; subTitleColor?: string }>`
         font-weight: 400;
         line-height: 24px;
         white-space: pre-line;
-        color: ${({ subTitleColor }) =>
-            subTitleColor ? subTitleColor : '#7c8595'};
+        color: ${({ subTitleColor }) => subTitleColor};
     }
 `;

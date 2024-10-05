@@ -5,67 +5,69 @@ import ImageResource, {
 } from '../../../../components/ImageResouce/ImageResource.tsx';
 
 const reviewList: Array<{
-    reviewText: string;
-    reviewerImage: ImageName;
-    reviewerName: string;
-    reviewerRole: string;
+    text: string;
+    ImageUrl: ImageName;
+    name: string;
+    role: string;
 }> = [
     {
-        reviewText: `"Pellentesque etsum is laoret mauris, dapibis etim
+        text: `"Pellentesque etsum is laoret mauris, dapibis etim
                         etsum, vivamus eti nibh ligula saepe present. Quis netsi
                         etsa lorem nibh ligula et evenit praesent autim fugit
                         justo et sed tempor."`,
-        reviewerImage: 'client1',
-        reviewerName: 'CRISTINA RICHARDS',
-        reviewerRole: 'CEO - SmartDesign',
+        ImageUrl: 'client1',
+        name: 'CRISTINA RICHARDS',
+        role: 'CEO - SmartDesign',
     },
     {
-        reviewText: `"Pellentesque etsum is laoret mauris, dapibis etim
+        text: `"Pellentesque etsum is laoret mauris, dapibis etim
                         etsum, vivamus eti nibh ligula saepe present. Quis netsi
                         etsa lorem nibh ligula et evenit praesent autim fugit
                         justo et sed tempor."`,
-        reviewerImage: 'client2',
-        reviewerName: 'SONG KIM',
-        reviewerRole: 'CEO - SmartDesign',
+        ImageUrl: 'client2',
+        name: 'SONG KIM',
+        role: 'CEO - SmartDesign',
     },
     {
-        reviewText: `"Pellentesque etsum is laoret mauris, dapibis etim
+        text: `"Pellentesque etsum is laoret mauris, dapibis etim
                         etsum, vivamus eti nibh ligula saepe present. Quis netsi
                         etsa lorem nibh ligula et evenit praesent autim fugit
                         justo et sed tempor."`,
-        reviewerImage: 'client3',
-        reviewerName: 'CRISTIANO RONALDO',
-        reviewerRole: 'CEO - SmartDesign',
+        ImageUrl: 'client3',
+        name: 'CRISTIANO RONALDO',
+        role: 'CEO - SmartDesign',
     },
 ];
 const Recommend = () => {
     return (
         <Container>
-            <SectionHeader
-                title="Happy Clients Testimonials"
-                subtitle="There are many variations of passages of Lorem Ipsum available, but the majority
+            <ContentContainer>
+                <SectionHeader
+                    title="Happy Clients Testimonials"
+                    subtitle="There are many variations of passages of Lorem Ipsum available, but the majority
 have suffered alteration, by injected humour, or new randomised words."
-                titleColor="#ffffff"
-                subTitleColor="#ffffff"
-            />
-            <RecommendCard>
-                {reviewList.map((item) => (
-                    <Content key={item.reviewerName}>
-                        <TextContainer>{item.reviewText}</TextContainer>
-                        <ClientContainer>
-                            <ImageResource
-                                name={item.reviewerImage}
-                                alt={`${item.reviewerName} image`}
-                                width={80}
-                            />
-                            <ClientInfo>
-                                <p>{item.reviewerName}</p>
-                                <p>{item.reviewerRole}</p>
-                            </ClientInfo>
-                        </ClientContainer>
-                    </Content>
-                ))}
-            </RecommendCard>
+                    titleColor="#ffffff"
+                    subTitleColor="#ffffff"
+                />
+                <RecommendCard>
+                    {reviewList.map((item) => (
+                        <Content key={item.name}>
+                            <TextContainer>{item.text}</TextContainer>
+                            <ClientContainer>
+                                <ImageResource
+                                    name={item.ImageUrl}
+                                    alt={`${item.name} image`}
+                                    width={80}
+                                />
+                                <ClientInfo>
+                                    <p>{item.name}</p>
+                                    <p>{item.role}</p>
+                                </ClientInfo>
+                            </ClientContainer>
+                        </Content>
+                    ))}
+                </RecommendCard>
+            </ContentContainer>
         </Container>
     );
 };
@@ -78,10 +80,18 @@ const Container = styled.div`
     background-color: #3498db;
 `;
 
+const ContentContainer = styled.div`
+    max-width: 1140px;
+    margin: 0 auto;
+`;
 const RecommendCard = styled.div`
     display: flex;
-    margin: 60px auto 0;
-    max-width: 1140px;
+    margin-top: 60px;
+
+    @media (max-width: 990px) {
+        flex-direction: column;
+        gap: 30px;
+    }
 `;
 
 const Content = styled.div`
