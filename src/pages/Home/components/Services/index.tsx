@@ -4,14 +4,7 @@ import ImageResource, {
     ImageName,
 } from '../../../../components/ImageResouce/ImageResource.tsx';
 import SectionHeader from '../SectionHeader.tsx';
-
-// const partnerList: Array<{ name: ImageName; alt: string }> = [
-//     { name: 'partner1', alt: 'partner1 image' },
-//     { name: 'partner2', alt: 'partner2 image' },
-//     { name: 'partner3', alt: 'partner3 image' },
-//     { name: 'partner4', alt: 'partner4 image' },
-//     { name: 'partner5', alt: 'partner5 image' },
-// ];
+import ServiceIntroduction from './ServiceIntroduction.tsx';
 
 const serviceData: Array<{
     name: ImageName;
@@ -48,6 +41,7 @@ const ServiceSection = () => {
                 title="Amazing Features"
                 subtitle={`There are many variations of passages of Lorem Ipsum available, but the majority
                 have suffered alteration, by injected humour, or new randomised words.`}
+                subTitleColor="7c8595"
             />
 
             <ServiceLists>
@@ -63,6 +57,7 @@ const ServiceSection = () => {
                     </Service>
                 ))}
             </ServiceLists>
+            <ServiceIntroduction />
         </Container>
     );
 };
@@ -96,6 +91,10 @@ const ServiceLists = styled.ul`
         font-weight: 400;
         line-height: 24px;
         white-space: pre-line;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
     }
 `;
 

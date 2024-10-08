@@ -75,6 +75,10 @@ const Container = styled.div`
     justify-content: center;
     width: 100%;
     background-color: #333;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const HeaderTopContainer = styled.div`
@@ -93,7 +97,7 @@ const SnsLink = styled.div<{ activeColor?: string }>`
     display: flex;
     padding: 12px;
     border-right: 1px solid rgb(228, 241, 254, 0.15);
-
+    cursor: pointer;
     &:hover {
         background-color: ${({ activeColor }) => activeColor};
     }

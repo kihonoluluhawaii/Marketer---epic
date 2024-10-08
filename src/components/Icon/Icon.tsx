@@ -34,7 +34,6 @@ export const Container = styled.div<{
     width: ${({ size }) => `${size}px`};
     height: ${({ size }) => `${size}px`};
     color: ${({ color }) => color};
-    cursor: pointer;
 
     &:hover {
         background-color: ${({ activeColor }) => activeColor};
